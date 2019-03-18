@@ -1,0 +1,124 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=8">
+    <title>财务分析系统</title>
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/echarts.js"></script>
+    <!-- <link href="/assets/styles.css?b37006bd69eb097439b4" rel="stylesheet"> -->
+    <style>
+        #container{
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <!-- <script type="text/javascript" src="/assets/vendor.js?b37006bd69eb097439b4"></script>
+    <script type="text/javascript" src="/assets/app.js?b37006bd69eb097439b4"></script> -->
+</body>
+    <script>
+        var option = {
+                radar: [{
+                    // shape: 'circle',
+                    name: {
+                        textStyle: {
+                            color: '#fff',
+                            backgroundColor: '#999',
+                            borderRadius: 3,
+                            padding: [3, 5]
+                        }
+                    },
+                    indicator: [{
+                        text: "盈利能力",
+                        max: 6
+                    }, {
+                        text: "发展能力",
+                        max: 6
+                    }, {
+                        text: "营运能力",
+                        max: 6
+                    }, {
+                        text: "偿债能力 ",
+                        max: 6
+                    }],
+                    startAngle: 90,
+                    splitNumber: 6,
+                    shape: "circle",
+                    name: {
+                        formatter: "{value}",
+                        textStyle: {
+                            color: "#4d4d4d"
+                        },
+                        fontSize: 18
+                    },
+                    splitArea: {
+                        areaStyle: {
+                            color: ["#fff"]
+                        }
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: "#c6d4ea"
+                        }
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: "#c6d4ea"
+                        }
+                    }
+                }],
+                series: [{
+                    name: "雷达图",
+                    type: "radar",
+                    label: {
+                        fontSize: 16
+                    },
+                    itemStyle: {
+                        emphasis: {
+                            lineStyle: {
+                                width: 4,
+                                color: "#64e6f8"
+                            }
+                        },
+                        normal: {
+                            areaStyle: {
+                                color: {
+                                    type: "linear",
+                                    x: 0,
+                                    y: 0,
+                                    colorStops: [{
+                                        offset: .5,
+                                        color: "#3b77c6"
+                                    }]
+                                }
+                            }
+                        }
+                    },
+                    data: [{
+                        value: [1, 2, 3, 4, 5],
+                        name: "图一",
+                        symbolSize: 2,
+                        lineStyle: {
+                            normal: {
+                                type: "solid",
+                                color: "#1cf7f4"
+                            }
+                        },
+                        label: {
+                            normal: {
+                                show: !0
+                            }
+                        }
+                    }]
+                }]
+            }
+            var myEchart = echarts.init(document.getElementById("container"))
+            myEchart.setOption(option)
+    </script>
+</html>
