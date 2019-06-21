@@ -1,4 +1,6 @@
-|-- undefined
+
+```
+|-- test
     |-- copyImg.js
     |-- copySourceData.js
     |-- index.html
@@ -53,3 +55,4 @@
         |       |-- polyfill.min.js
         |-- tcc
             |-- tcc_l.combined.1.0.6.min.js
+```
